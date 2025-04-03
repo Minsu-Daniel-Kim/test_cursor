@@ -1,0 +1,13 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+6. 데이터 & 모델 파일 (Git LFS) 지침
+
+1. 대용량 파일 관리
+- .gitattributes를 통해 .csv, .parquet, .pth, .model 등 등록.
+2. 데이터 폴더 구성
+- data/raw/, data/interim/, data/processed/ 등 단계별 구분.
+3. 모델 체크포인트
+- models/ 폴더 또는 실험별 폴더에 위치. 용량 큰 파일은 LFS로 추적.

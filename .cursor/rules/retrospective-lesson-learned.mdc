@@ -1,0 +1,36 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+(이 섹션에서 과거 실험 경험을 체계적으로 축적하고, 특히 Data Leakage 같은 치명적 실수를 재발하지 않게 하는 방법을 다룹니다.)
+
+1. Lesson Learned 섹션
+- 모든 실험 보고서의 맨 끝에 Lesson Learned(또는 Retrospective) 항목을 작성:
+    잘된 점,
+    잘못된 점(오류, 실수, 리키지 등),
+    다음 실험에서 개선해야 할 사항.
+- 이 내용이 다음 실험을 시작할 때 반드시 재검토되도록 습관화.
+
+2. Issue & Fix 문서 (프로젝트 공용)
+- docs/lessons_learned.md 같은 파일을 두고, 주요 문제(예: Data Leakage) 발생 시마다 기록:
+    발생 원인, 수정 방법, 향후 유의사항, 발견 날짜 등을 명시.
+- 새로 합류한 팀원이 과거 이슈를 훑어볼 때도 유용.
+
+3. 데이터 리키지(Data Leakage) 등 치명적 오류 발견 시
+- 즉시 main(또는 dev)에 Hotfix를 머지해서, “정상화된 코드”를 만든다.
+- 이후 실험은 반드시 정상화된 브랜치에서 새로 파생하여 진행(과거 버그 포함된 코드를 참조 금지).
+- 보고서나 Issue 문서에 구체적으로 “어떤 부분이 원인이었고, 어떻게 수정했는지” 기록.
+
+4. 자동화된 검증
+- 가능한 한, 데이터 리키지 방지 로직이나 테스트(예: train/test 겹치는지 체크)를 CI(Continuous Integration) 파이프라인에 추가.
+- PR(머지 요청) 시 자동 검사하여, 다시는 같은 실수가 재발하지 않도록 방어.
+5. Iteration 전 체크리스트
+- 새 실험(브랜치) 시작 전, 이전 Lesson Learned나 lessons_learned.md를 확인하여,
+    동일/유사 문제가 발생할 여지를 미리 차단.
+- 필요하다면 PR 템플릿에 체크 항목 추가:
+    - [ ] 과거 Data Leakage 사례(issue #12) 확인 후, split 로직 검토 완료
+
+6. 점진적 개선 (Incremental Updates)
+- 실험이 끝나 Merge할 때, 이번 실험에서 해결된 문제나 적용된 교훈을 PR 본문에 요약.
+- 코드가 모듈화되어 있다면(예: src/data_preprocessing.py), 한 번 고친 리키지 방지 로직이 모든 후속 실험에 자동 적용.

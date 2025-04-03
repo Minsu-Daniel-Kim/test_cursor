@@ -1,0 +1,30 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+2. Git 사용 규칙
+
+- 2.1 Git LFS
+
+50MB 이상의 파일(대형 CSV, 모델 체크포인트 등)은 반드시 LFS로 관리.
+.gitattributes에 필요한 확장자를 등록해두고, 새 확장자 발생 시에도 추가.
+
+- 2.2 커밋 메시지
+
+명확하고 간결한 메시지: feat: add experiment_02_new_features report
+중요 변경 사항이나 버그 수정 시 짧은 이유/맥락도 언급.
+
+- 2.3 브랜치 전략
+
+주요 변경 사항(대규모 기능 추가, 모델 구조 변경, 중대한 실험 등)은 가급적 새 브랜치에서 작업 후, main(또는 dev)으로 Merge.
+간단한 수정(문서 업데이트, 작은 버그 픽스 등)은 메인 브랜치에서 바로 해도 무방.
+브랜치 이름 예시:
+feat/experiment_02_new_features
+fix/data_leakage_issue
+작업 완료 후 Pull Request/머지 요청 → 리뷰 → 승인 → main 머지 → 브랜치 삭제.
+
+- 2.4 푸시(Push) 시점
+
+의미 있는 수정(보고서 작성, 데이터 업데이트, 주요 코드 변경) 직후 자주 커밋 & 푸시.
+푸시 전, 민감 정보(API key 등)나 임시 파일이 포함되지 않았는지 확인.

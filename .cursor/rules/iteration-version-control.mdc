@@ -1,0 +1,13 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+
+1. Iteration 구분
+- 실험별 폴더(exp_01, exp_02 등) 또는 날짜/버전(Tag)로 관리.
+- 한 번의 실험이 끝나면 커밋 메시지나 태그에 “실험 종료”나 “iteration 완료” 표기.
+2. 변경 요약
+- 보고서 문서 맨 끝에 “Changes from last iteration”처럼 이전과 달라진 점 요약.
+3. Git 태그
+- 중요한 마일스톤(실험 결과 확정) 시 v0.1, v0.2 등 버전 태그로 남기면 나중에 추적이 용이.

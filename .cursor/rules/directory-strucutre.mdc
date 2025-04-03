@@ -1,0 +1,25 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+
+폴더 구조 (Directory Structure)
+
+1. docs/ 폴더
+모든 마크다운 형식 보고서(실험 노트, 요약, 결과물 보고서 등)는 여기에 저장.
+예: docs/experiment_01_report.md, docs/daily_notes_2025-04-02.md 등.
+
+2. experiments/ 폴더
+실험별 코드 또는 해당 실험에 특화된 스크립트, 결과물을 보관.
+예: experiments/exp_01_baseline/…, experiments/exp_02_new_features/….
+보고서도 실험 폴더에 함께 두고 싶다면 experiments/exp_01_baseline/report.md처럼 저장해도 됨(팀 협의에 따라).
+
+3. data/ 폴더
+원본(raw) 및 중간/전처리 데이터. 대용량 파일은 Git LFS로 추적.
+
+4. src/ / scripts/ 폴더
+재사용 가능한 코드(유틸 함수, 라이브러리 등)를 모듈화해 관리.
+
+5. (선택) models/ 폴더
+최종 모델 체크포인트나 학습 결과물을 저장 (대용량이면 LFS 사용).

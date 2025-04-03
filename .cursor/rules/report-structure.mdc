@@ -1,0 +1,13 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+1. 파일명 규칙
+- experiment_XX_report.md, daily_notes_YYYY-MM-DD.md, findings_YYYYMMDD.md 등, 역할·날짜·실험 번호 등을 명시.
+
+2. 파일 위치
+- 기본적으로 docs/ 폴더에, 특정 실험에 강하게 연관된 보고서는 experiments/exp_XX/에 둬도 됨.
+3. 보고서 구조
+- 문서 맨 위에 메타 정보(작성일, 관련 실험명 등).
+- 주요 섹션 예: 개요(Overview), 실험 목표, 결과 요약, Lesson Learned, 추가 개선 아이디어 등.

@@ -1,0 +1,14 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+4. LLM 자동 생성 파일 지침
+1. 파일 형식
+- LLM 보고서/요약 문서는 Markdown 형식(.md)으로 생성.
+2. 파일명 명명 규칙
+- 예: docs/experiment_02_report_2025-04-02.md
+- 자동 생성 시 커밋 메시지에 [auto-gen] 표시:
+    예: git commit -m "[auto-gen] Add experiment_02 LLMBot summary report"
+3. 임시 파일
+- 임시 스크립트, 테스트용 텍스트 파일 등은 tmp/ 혹은 experiments/exp_XX/tmp/에 저장 후, 불필요하면 정리.

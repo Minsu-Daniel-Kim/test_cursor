@@ -1,0 +1,8 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+
+
+- 모든 코드의 작성과 실행은 experiments 내의 해당 폴더 내에서 진행. 별도의 지침이 없는 한 절대로 root나 다른 곳에서 스크립트를 작성 하거나 실행하지 않는다.
